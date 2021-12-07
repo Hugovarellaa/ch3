@@ -4,7 +4,7 @@ import closeImg from "../../assets/close.svg";
 import incomeIgm from "../../assets/income.svg";
 import outcome from "../../assets/outcome.svg";
 import { FormEvent, useState } from "react";
-import { api } from "../../services/api";
+import { useTransaction } from "../hooks/useTransaction";
 
 interface ModalProps {
   onOpen: boolean;
@@ -12,17 +12,26 @@ interface ModalProps {
 }
 
 export function NewTransactionModal({ onOpen, onRequestClose }: ModalProps) {
+  const { createTransaction } = useTransaction();
   const [type, setType] = useState("deposit");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState(0);
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    const data = { title, type, amount, category };
-
-    api.post("/transactions", data);
+    await createTransaction({
+      amount,
+      category,
+      title,
+      type,
+    });
+    onRequestClose();
+    setType("deposit");
+    setTitle("");
+    setCategory("");
+    setAmount(0);
   }
 
   return (

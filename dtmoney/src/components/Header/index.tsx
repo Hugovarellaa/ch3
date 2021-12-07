@@ -2,10 +2,10 @@ import { Container, Content } from "./styles";
 import logoImg from "../../assets/logo.svg";
 
 interface HeaderProps {
-  onOpen: ()=> void
+  onOpen: () => void;
 }
 
-export function Header({onOpen}:HeaderProps) {
+export function Header({ onOpen }: HeaderProps) {
   return (
     <>
       <Container>
@@ -15,7 +15,6 @@ export function Header({onOpen}:HeaderProps) {
             Nova transaçào{" "}
           </button>
         </Content>
-        
       </Container>
     </>
   );
