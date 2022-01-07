@@ -14,3 +14,12 @@
     font-size: 87.5%;
   }
 }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
