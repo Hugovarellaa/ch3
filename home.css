@@ -47,6 +47,7 @@ h2 {
 }
 
 header {
+  display: block;
   background: var(--green-dark);
   padding: 4rem 0 8rem;
   text-align: center;
@@ -192,6 +193,7 @@ div.modal-overlay {
 
   opacity: 0;
   visibility: hidden;
+  z-index: 999;
 }
 
 div.modal-overlay.active {
