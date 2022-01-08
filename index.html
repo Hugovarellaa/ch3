@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./home.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,100;0,400;0,500;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./home.css" />
     <title>dev.finance</title>
   </head>
   <body>
     <header>
-        <h1 id="logo">
-            dev.finance$</header>
-        </h1>
-            
+      <img src="./assets//logo.svg" alt="Logo Dev Finance" />
+    </header>
 
     <main class="container">
       <section id="balance">
-        <h2>Balanço</h2>
+        <h2 class="sr-only">Balanço</h2>
 
         <div class="card">
-          <h3>Entradas</h3>
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/income.svg" alt="Entradas" />
+          </h3>
           <p>R$ 5.000,00</p>
         </div>
 
         <div class="card">
-          <h3>Saidas</h3>
+          <h3>
+            <span>Saídas</span>
+            <img src="./assets/expense.svg" alt="Saídas" />
+          </h3>
           <p>R$ 1.500,00</p>
         </div>
 
         <div class="card total">
-          <h3>Total</h3>
+          <h3>
+            <span>Total</span>
+            <img src="./assets/total.svg" alt="Saídas" />
+          </h3>
           <p>R$ 3.500,00</p>
         </div>
       </section>
 
       <section id="transaction">
-        <h2>Transações</h2>
+        <a href="#" class="button new">+ Nova Transação</a>
+        <h2 class="sr-only">Transações</h2>
 
         <table id="data-table">
           <thead>
@@ -46,6 +57,7 @@
               <th>Descrição</th>
               <th>Valor</th>
               <th>Data</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -53,18 +65,21 @@
               <td>Luz</td>
               <td class="witdraw">R$ -500,00</td>
               <td>23/01/2022</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
             </tr>
 
             <tr>
               <td>Criação de webiste</td>
               <td class="deposit">R$ 5000,00</td>
               <td>05/01/2022</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
             </tr>
 
             <tr>
               <td>Aluguel</td>
               <td class="witdraw">R$ -1.500,00</td>
               <td>15/01/2022</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
             </tr>
           </tbody>
         </table>
