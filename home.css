@@ -26,6 +26,7 @@
   --dark-blue: #363f5f;
   --green: #49aa26;
   --green-dark: #2d4a22;
+  --red: #e92929;
   --white: #fff;
   --background-1: #e2e8f0;
   --background-0: #f0f2f5;
@@ -47,7 +48,7 @@ h2 {
 
 header {
   background: var(--green-dark);
-  padding: 2rem 0 6rem;
+  padding: 4rem 0 8rem;
   text-align: center;
 }
 
@@ -69,7 +70,7 @@ header h1#logo {
 }
 
 main.container {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: -6rem;
   padding: 0 2rem;
@@ -82,7 +83,7 @@ main section#balance h2 {
 
 main section#balance .card {
   background: var(--white);
-  padding: 1.5rem 2rem;
+  padding: 0.8rem 1rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
   color: var(--dark-blue);
@@ -107,6 +108,12 @@ main section#balance .card.total {
   color: var(--white);
 }
 
+main section #transiction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
 main section a {
   color: var(--green);
   text-decoration: none;
@@ -127,10 +134,9 @@ main section table#data-table {
   width: 100%;
   border-spacing: 0 0.5rem;
   color: var(--text-table);
-  display: block;
-  overflow-x: auto;
   padding: 1rem 0;
 }
+
 main section table#data-table th {
   background: var(--white);
   padding: 1rem 2rem;
@@ -142,6 +148,7 @@ main section thead tr th:first-child,
 main section tbody tr td:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
 }
+
 main section thead tr th:last-child,
 main section tbody tr td:last-child {
   border-radius: 0 0.25rem 0.25rem 0;
@@ -156,6 +163,7 @@ main section table#data-table td {
 main section table#data-table td.deposit {
   color: green;
 }
+
 main section table#data-table td.witdraw {
   color: red;
 }
@@ -166,6 +174,126 @@ main section table#data-table td:first-child {
 
 main section table#data-table tbody tr:hover {
   filter: brightness(0.8);
+}
+
+div.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+div.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+div div.modal {
+  background: var(--background-1);
+  padding: 2.4rem;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+div div.modal div.modal-content div#form {
+  max-width: 500px;
+}
+
+div div.modal div.modal-content div#form h2 {
+  margin-top: 0;
+}
+
+div div.modal div.modal-content div#form form input {
+  border: 0;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+div div.modal div.modal-content div#form form .input-group {
+  margin-top: 0.8rem;
+}
+
+div div.modal div.modal-content div#form form .input-group small {
+  opacity: 0.4;
+}
+
+div div.modal div.modal-content div#form form .input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* botões modal */
+div div.modal div.modal-content div#form form .input-group.actions button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: white;
+  background: var(--green);
+  padding: 0;
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+div
+  div.modal
+  div.modal-content
+  div#form
+  form
+  .input-group.actions
+  button:hover {
+  filter: brightness(0.75);
+}
+
+div div.modal div.modal-content div#form form .input-group.actions .button,
+div div.modal div.modal-content div#form form .input-group.actions button {
+  width: 48%;
+}
+
+div
+  div.modal
+  div.modal-content
+  div#form
+  form
+  .input-group.actions
+  .button.cancel {
+  color: var(--red);
+  background: var(--background-0);
+  border: 2px solid var(--red);
+  height: 50px;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div
+  div.modal
+  div.modal-content
+  div#form
+  form
+  .input-group.actions
+  .button.cancel:hover {
+  filter: brightness(0.9);
 }
 
 footer {
