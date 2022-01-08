@@ -29,7 +29,7 @@ h2 {
 
 header {
   background: var(--green-dark);
-  padding: 2rem 0 7rem;
+  padding: 3rem 0 8rem;
   text-align: center;
 }
 
@@ -95,10 +95,24 @@ main section table#data-table td {
   font-weight: normal;
 }
 
-main section table#data-table tr:hover {
+main section table#data-table td.deposit {
+  color: green;
+}
+main section table#data-table td.witdraw {
+  color: red;
+}
+
+main section table#data-table td:first-child {
+  color: var(--dark-blue);
+}
+
+main section table#data-table tbody tr:hover {
   filter: brightness(0.8);
 }
 
 footer {
   text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+  opacity: 0.6;
 }
