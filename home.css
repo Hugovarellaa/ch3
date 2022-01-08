@@ -9,10 +9,14 @@
   --green: #49aa26;
   --green-dark: #2d4a22;
   --white: #fff;
+  --background-1: #e2e8f0;
+  --background-0: #f0f2f5;
+
+  --text-table: #969cb3;
 }
 
 body {
-  background: #f0f2f5;
+  background: var(--background-1);
   font-family: "Poppins", sans-serif;
 }
 
@@ -70,8 +74,29 @@ main section#balance .card.total {
   color: var(--white);
 }
 
-main table#data-table {
+main section table#data-table {
   width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--text-table);
+}
+main section table#data-table th {
+  background: var(--white);
+
+  padding: 1rem 2rem;
+  text-align: left;
+  border-radius: 0.25rem 0 0 0.25rem;
+  font-weight: normal;
+}
+
+main section table#data-table td {
+  background: var(--white);
+  border-radius: 0.25rem 0 0 0.25rem;
+  padding: 1rem 2rem;
+  font-weight: normal;
+}
+
+main section table#data-table tr:hover {
+  filter: brightness(0.8);
 }
 
 footer {
