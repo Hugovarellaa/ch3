@@ -4,7 +4,76 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-blue: #363f5f;
+  --green: #49aa26;
+  --green-dark: #2d4a22;
+  --white: #fff;
+}
+
 body {
   background: #f0f2f5;
   font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+  font-weight: normal;
+}
+
+header {
+  background: var(--green-dark);
+  padding: 2rem 0 7rem;
+  text-align: center;
+}
+
+header h1#logo {
+  color: var(--white);
+  font-weight: 100;
+}
+
+main.container {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: -6rem;
+  padding: 0 2rem;
+}
+
+main section#balance h2 {
+  color: var(--white);
+  margin-top: 0;
+}
+
+main section#balance .card {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+}
+
+main section#balance .card h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+main section#balance .card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+main section#balance .card.total {
+  background: var(--green);
+  color: var(--white);
+}
+
+main table#data-table {
+  width: 100%;
+}
+
+footer {
+  text-align: center;
 }
