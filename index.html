@@ -27,7 +27,7 @@
             <span>Entradas</span>
             <img src="./assets/income.svg" alt="Entradas" />
           </h3>
-          <p>R$ 5.000,00</p>
+          <p id="depositDisplay">R$ 0,00</p>
         </div>
 
         <div class="card">
@@ -35,7 +35,7 @@
             <span>Saídas</span>
             <img src="./assets/expense.svg" alt="Saídas" />
           </h3>
-          <p>R$ 1.500,00</p>
+          <p id="withdrawDisplay">R$ 0,00</p>
         </div>
 
         <div class="card total">
@@ -43,12 +43,12 @@
             <span>Total</span>
             <img src="./assets/total.svg" alt="Saídas" />
           </h3>
-          <p>R$ 3.500,00</p>
+          <p id="totalDisplay">R$ 0,00</p>
         </div>
       </section>
 
       <section id="transaction">
-        <a href="#" class="button new" onclick="Modal.open()"
+        <a href="#" class="button new" onclick="toggleModal()"
           >+ Nova Transação</a
         >
         <h2 class="sr-only">Transações</h2>
@@ -59,31 +59,10 @@
               <th>Descrição</th>
               <th>Valor</th>
               <th>Data</th>
-              <th></th>
+              <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Luz</td>
-              <td class="witdraw">R$ -500,00</td>
-              <td>23/01/2022</td>
-              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
-            </tr>
-
-            <tr>
-              <td>Criação de webiste</td>
-              <td class="deposit">R$ 5000,00</td>
-              <td>05/01/2022</td>
-              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
-            </tr>
-
-            <tr>
-              <td>Aluguel</td>
-              <td class="witdraw">R$ -1.500,00</td>
-              <td>15/01/2022</td>
-              <td><img src="./assets/minus.svg" alt="Remover transação" /></td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
     </main>
@@ -93,7 +72,7 @@
         <div class="modal-content">
           <div id="form">
             <h2>Nova Transação</h2>
-            <form action="">
+            <form action="" onsubmit="Form.submit(event)">
               <div class="input-group">
                 <label class="sr-only" for="description">Descrição</label>
                 <input
@@ -125,7 +104,7 @@
               </div>
 
               <div class="input-group actions">
-                <a href="#" class="button cancel" onclick="Modal.close()"
+                <a href="#" class="button cancel" onclick="toggleModal()"
                   >Cancelar</a
                 >
                 <button type="submit">Salvar</button>
